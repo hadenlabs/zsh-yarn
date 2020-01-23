@@ -17,3 +17,7 @@ source "${YARN_SOURCE_PATH}"/base.zsh
 
 # shellcheck source=/dev/null
 source "${YARN_SOURCE_PATH}"/yarn.zsh
+
+function yarn::run {
+    yarn::search::scripts
+}
