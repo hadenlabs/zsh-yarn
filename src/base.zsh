@@ -9,6 +9,14 @@ function fzf::exist {
     echo 1
 }
 
+function jq::exist {
+    if ! type -p jq > /dev/null; then
+        echo 0
+        return
+    fi
+    echo 1
+}
+
 function brew::exist {
     if ! type -p brew > /dev/null; then
         echo 0
@@ -41,6 +49,14 @@ function yarn::exist {
     echo 1
 }
 
+function jq::install {
+    if [ "$(brew::exist)" -eq 0 ]; then
+        message_warning "Please Install brew or use antibody bundle luismayta/zsh-brew branch:develop"
+        return
+    fi
+    brew install jq
+}
+
 function fzf::install {
     if [ "$(brew::exist)" -eq 0 ]; then
         message_warning "Please Install brew or use antibody bundle luismayta/zsh-brew branch:develop"
@@ -71,6 +87,7 @@ function yarn::install {
 
 
 if [ "$(fzf::exist)" -eq 0 ]; then fzf::install; fi
+if [ "$(jq::exist)" -eq 0 ]; then jq::install; fi
 if [ "$(nvm::exist)" -eq 0 ]; then nvm::install; fi
 if [ "$(node::exist)" -eq 0 ]; then node::install; fi
 if [ "$(yarn::exist)" -eq 0 ]; then yarn::install; fi
