@@ -81,5 +81,6 @@ setup:
 
 environment:
 	@echo "=====> loading virtualenv ${PYENV_NAME}..."
+	pyevn local ${PYTHON_VERSION}
 	@pipenv --venv || $(PIPENV_INSTALL) --python=${PYTHON_VERSION} --skip-lock
 	@echo ${MESSAGE_HAPPY}
