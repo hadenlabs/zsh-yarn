@@ -83,7 +83,14 @@ function node::install {
 
 function yarn::install {
     curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+    yarn::load
 }
+
+function yarn::load {
+    [ -f "${YARN_PATH}/bin" ] && export PATH="${PATH}:${YARN_PATH}/bin"
+}
+
+yarn::load
 
 
 if [ "$(fzf::exist)" -eq 0 ]; then fzf::install; fi
