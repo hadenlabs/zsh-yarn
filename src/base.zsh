@@ -82,12 +82,14 @@ function node::install {
 }
 
 function yarn::install {
-    curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+    if [ ! -e "${YARN_PATH}" ]; then
+        curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+    fi
     yarn::load
 }
 
 function yarn::load {
-    [ -f "${YARN_PATH}/bin" ] && export PATH="${PATH}:${YARN_PATH}/bin"
+    [ -e "${YARN_PATH}/bin" ] && export PATH="${PATH}:${YARN_PATH}/bin"
 }
 
 yarn::load
