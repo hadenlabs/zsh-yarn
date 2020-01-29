@@ -14,7 +14,7 @@ function yarn::script::list {
         message_info "Not found package.json"
         return
     fi
-    cat package.json | jq -r ".scripts" | jq -r 'to_entries[] | [.key, .value] | @tsv'
+    less package.json | jq -r ".scripts" | jq -r 'to_entries[] | [.key, .value] | @tsv'
 }
 
 function yarn::dependencies::list {
@@ -22,7 +22,7 @@ function yarn::dependencies::list {
         message_info "Not found package.json"
         return
     fi
-    cat package.json | jq -r ".dependencies" | jq -r 'to_entries[] | [.key, .value] | @tsv'
+    less package.json | jq -r ".dependencies" | jq -r 'to_entries[] | [.key, .value] | @tsv'
 }
 
 function yarn::search::scripts {
