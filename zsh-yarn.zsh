@@ -24,3 +24,6 @@ source "${YARN_SOURCE_PATH}"/yarn.zsh
 function yarn::run {
     yarn::search::scripts
 }
+
+zle -N yarn::run
+bindkey '^Xr' yarn::run
