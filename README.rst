@@ -1,6 +1,8 @@
 zsh-yarn
 ========
 
+|Build Status| |GitHub issues| |GitHub license|
+
 zsh tools for yarn
 
 :Version: 0.0.0
@@ -23,8 +25,8 @@ Dependencies
 .. code-block:: bash
 
     https://github.com/mafredri/zsh-async
-    https://github.com/luismayta/zsh-notify
     https://github.com/luismayta/zsh-functions
+
 
 Installation
 ------------
@@ -88,7 +90,7 @@ Usage
 
 .. code-block:: bash
 
-    λ make setup
+  λ make setup
 
 Support
 -------
@@ -172,11 +174,11 @@ Made with :coffee: and :pizza: by `Luis Mayta`_ and `equipindustry`_.
 
 .. Team:
 .. |Luis Mayta| image:: https://github.com/luismayta.png?size=100
-    :target: https://github.com/luismayta
+   :target: https://github.com/luismayta
 
 .. Footer:
 .. |linkedin| image:: http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png
-    :target: https://www.linkedin.com/in/luismayta
+    :target: https://pe.linkedin.com/in/luismayta
 .. |beacon| image:: https://ga-beacon.appspot.com/UA-65019326-1/github.com/luismayta/zsh-yarn/readme
     :target: https://github.com/luismayta/zsh-yarn
 .. |made| image:: https://img.shields.io/badge/Made%20with-Zsh-1f425f.svg
