@@ -27,12 +27,12 @@ function yarn::dependencies::list {
 
 function yarn::search::scripts {
     local command
-    command=$(yarn::script::list \
-                  | fzf \
-                  | awk '{print $1}' \
-                  | perl -pe 'chomp'
-           )
-    if [ -n "${command}" ]; then
-        yarn run "${command}"
+    read -r command <<<$(yarn::script::list \
+                           | fzf \
+                           | awk '{print $1}')
+    if [ -z "${command}" ]; then
+        message_warning "please select one script"
+        return
     fi
+    echo "${command}"
 }
