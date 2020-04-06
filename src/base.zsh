@@ -51,7 +51,7 @@ function yarn::exist {
 
 function jq::install {
     if [ "$(brew::exist)" -eq 0 ]; then
-        message_warning "Please Install brew or use antibody bundle luismayta/zsh-brew branch:develop"
+        message_warning "${YARN_MESSAGE_BREW_NOT_FOUND}"
         return
     fi
     brew install jq
@@ -59,7 +59,7 @@ function jq::install {
 
 function fzf::install {
     if [ "$(brew::exist)" -eq 0 ]; then
-        message_warning "Please Install brew or use antibody bundle luismayta/zsh-brew branch:develop"
+        message_warning "${YARN_MESSAGE_BREW_NOT_FOUND}"
         return
     fi
     brew install fzf
@@ -67,18 +67,18 @@ function fzf::install {
 
 function nvm::install {
     if [ "$(nvm::exist)" -eq 0 ]; then
-        message_warning "Please Install nvm or use antibody bundle luismayta/zsh-nvm branch:develop"
+        message_warning "${YARN_MESSAGE_NVM_NOT_FOUND}"
         return
     fi
 }
 
 function node::install {
-    if [ "$(nvm::exist)" -eq 1 ]; then
-        nvm install lts
+    if [ "$(nvm::exist)" -eq 0 ]; then
+        message_warning "${YARN_MESSAGE_NVM_NOT_FOUND}"
         return
     fi
 
-    message_warning "Please Install nvm or use antibody bundle luismayta/zsh-nvm branch:develop"
+    nvm install lts
 }
 
 function yarn::install {
