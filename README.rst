@@ -1,9 +1,9 @@
 zsh-yarn
 ========
 
-|Build Status| |GitHub issues| |GitHub license|
+Functions and tools yarn with zsh
 
-zsh tools for yarn
+|Build Status| |GitHub issues| |GitHub license|
 
 :Version: 0.0.0
 :Web: https://github.com/luismayta/zsh-yarn
@@ -26,7 +26,6 @@ Dependencies
 
     https://github.com/mafredri/zsh-async
     https://github.com/luismayta/zsh-functions
-
 
 Installation
 ------------
