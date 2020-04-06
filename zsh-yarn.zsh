@@ -14,7 +14,6 @@ YARN_SOURCE_PATH="${YARN_PLUGIN_DIR}"/src
 
 export YARN_PATH="${HOME}"/.yarn
 
-
 # shellcheck source=/dev/null
 source "${YARN_SOURCE_PATH}"/base.zsh
 
@@ -22,7 +21,12 @@ source "${YARN_SOURCE_PATH}"/base.zsh
 source "${YARN_SOURCE_PATH}"/yarn.zsh
 
 function yarn::run {
-    yarn::search::scripts
+    local command
+    command=$(yarn::search::scripts)
+    if [ -n "${command}" ]; then
+        yarn "${command}"
+        zle accept-line
+    fi
 }
 
 zle -N yarn::run
