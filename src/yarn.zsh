@@ -31,7 +31,6 @@ function yarn::search::scripts {
                            | fzf \
                            | awk '{print $1}')
     if [ -z "${command}" ]; then
-        message_warning "please select one script"
         return
     fi
     echo "${command}"
