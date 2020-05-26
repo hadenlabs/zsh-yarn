@@ -9,7 +9,7 @@
 #
 export yarn_package_name="yarn"
 
-YARN_PLUGIN_DIR="$(dirname "${0}":A)"
+YARN_PLUGIN_DIR="$(dirname "${0}")"
 YARN_SOURCE_PATH="${YARN_PLUGIN_DIR}"/src
 
 export YARN_PATH="${HOME}"/.yarn
@@ -25,11 +25,11 @@ source "${YARN_SOURCE_PATH}"/yarn.zsh
 
 function yarn::run {
     local command
-    command=$(yarn::search::scripts)
-    if [ -n "${command}" ]; then
-        yarn "${command}"
-        zle accept-line
+    command="$(yarn::search::scripts)"
+    if [ -z "${command}" ]; then
+        return
     fi
+    env yarn "${command}" && zle accept-line
 }
 
 zle -N yarn::run
