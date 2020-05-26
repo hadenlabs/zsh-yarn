@@ -15,5 +15,5 @@ keybase:
 
 keybase.setup:
 	@echo "=====> make dependences for ${TEAM}..."
-	mkdir -p ${KEYBASE_PROJECT_PATH}/{staging,prod,dev}/{pem,private,password,pub,openssl}
+	mkdir -p ${KEYBASE_PROJECT_PATH}/{staging,prod,dev,core}/{pem,private,password,pub,openssl}
 	@echo ${MESSAGE_HAPPY}
