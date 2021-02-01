@@ -1,6 +1,6 @@
 {
   "name": "@hadenlabs/zsh-yarn",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "zsh-yarn for zsh",
   "repository": "ssh://git@github.com/hadenlabs/zsh-yarn.git",
   "author": "Luis Mayta <slovacus@gmail.com>",
